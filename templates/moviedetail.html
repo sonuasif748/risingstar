@@ -1,0 +1,196 @@
+{% include 'nav.html' %}
+{% include 'links.html' %}
+{% load static %}
+<style>
+    span.font-weight-bold {
+    color: white;
+}
+    .video-box-overlay {
+    position: relative;
+}
+
+.video-box-overlay .video-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.video-box-overlay .video-box .video-box-play {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.video-box-overlay .video-box .video-box-play .icon {
+    font-size: 60px;
+    line-height: 60px;
+    transition: 0.2s;
+}
+
+.video-box-overlay .video-box .video-box-play a {
+    display: inline-block;
+}
+
+.video-box-overlay .video-box .video-box-inner {
+    position: absolute;
+    padding-left: 30px;
+    bottom: 17px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Roboto Slab", serif;
+}
+
+@media (min-width: 768px) {
+    .video-box-overlay .video-box .video-box-inner {
+        padding-left: 90px;
+    }
+}
+
+@media (min-width: 992px) {
+    .video-box-overlay .video-box .video-box-inner {
+        padding-left: 30px;
+    }
+}
+
+.video-box-overlay .video-box .video-box-inner a {
+    color: #ffffff;
+    transition: 0.4s;
+}
+
+.video-box-overlay .video-box .video-box-inner a:hover {
+    color: #d81a24;
+}
+
+.video-box-overlay .video-box .video-box-inner .item-1 {
+    position: relative;
+    margin-right: 14px;
+    padding-right: 14px;
+    display: inline-block;
+}
+
+.video-box-overlay .video-box .video-box-inner .item-1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.video-box-overlay .video-box .video-box-inner .item-2 {
+    display: inline-block;
+}
+
+</style>
+<link rel="stylesheet" href="{% static 'css/kids.css' %}">
+<div>
+    <section class="section-inset-2" style="padding-top: 90px;padding-left: 20px">
+        <h1 class="font-weight-bold" style="color: #fff;text-align: center">Movie : {{ detail.title }}</h1>
+
+        <div class="row row-45">
+            <div class="col-12 col-md-12 col-lg-6 text-lg-left well1">
+                <div class="row">
+                    <div class="col-sm-6"><img width="90%" src="{{ detail.image.url }}" alt=""></div>
+                    <div class="col-sm-6 text-left offset-top-30">
+                        <div class="review-2">
+                            <span class="material-icons">star</span>
+                            <span class="material-icons">star</span>
+                            <span class="material-icons">star</span>
+                            <span class="material-icons">star</span>
+                            <span class="material-icons">star_outline</span>
+
+                        </div>
+                        <span class="font-weight-bold">Genre:&nbsp;
+                            <span class="font-weight-light">{{ detail.geners }}<br></span>
+                        </span>
+                        <span class="font-weight-bold">Release year:&nbsp;
+                            <span class="font-weight-light">2021 <br></span>
+                        </span>
+                        <span class="font-weight-bold">Running time:&nbsp;
+                            <span class="font-weight-light">120 min <br></span>
+                        </span>
+                        <span class="font-weight-bold">Country:&nbsp;
+                            <span class="font-weight-light">IN<br></span>
+                        </span><br>
+                        <span class="font-weight-bold">Discription:&nbsp;
+                            <p>{{ detail.discription }}<br></p>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="w3l-main-sliders col-12 col-md-12 col-lg-6 text-center text-lg-left" style="padding: 0">
+                <div class="item">
+                <li>
+                    <div class="slider-info banner-view banner-top8 bg bg2" style="min-height: 405px;width: 630px;
+                            background: url({{ detail.screen_shot.url }}) no-repeat center">
+                        <div class="banner-info">
+                            <h3>{{ detail.title }}</h3>
+                            <p>{{ detail.discription }}<span class="over-para"></span>
+                            </p>
+                            <a href="#small-dialog1" class="popup-with-zoom-anim play-view1">
+									<span class="video-play-icon">
+										<i class="material-icons">play_arrow</i>
+									</span>
+                                <h6>Watch Now</h6>
+                            </a>
+                            <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                            <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
+                                <iframe src="{{ detail.movie_link }}" allow="autoplay; fullscreen"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container-fluid">
+    <section class="w3l-grids">
+        <div class="grids-main py-5">
+            <div class="container-fluid py-lg-3">
+                <div class="headerhny-title">
+                    <div class="w3l-title-grids">
+                        <div class="headerhny-left">
+                            <h3 class="hny-title">You may also like...</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3l-populohny-grids">
+                    {% for i in am %}
+                        <div class="item vhny-grid">
+                            <div class="box16">
+                                <a href="{% url 'moviedetail' i.id %}">
+                                    <figure>
+                                        <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                    </figure>
+                                    <div class="box-content">
+                                        <h3 class="title">{{ i.title }}</h3>
+                                        <h4> <span class="post"><span class="material-icons">schedule</span> 1 Hr 4min
+										</span>
+                                            <span class="post fa fa-heart text-right"></span>
+                                        </h4>
+                                    </div>
+                                    <span class="material-icons video-icon" aria-hidden="true">play_arrow</span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% include 'footer.html' %}

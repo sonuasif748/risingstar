@@ -1,0 +1,200 @@
+{% load static %}
+{% include 'links.html' %}
+<style>
+    .avatar {
+        vertical-align: middle;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+</style>
+
+<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+    <div class="container" style="margin: 0px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" id="menu" style="padding-right: 0px">
+                <li>
+                    <a href="/"><img style="width: 40%;" src="{% static 'img/logo.png' %}"></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" id="menu">
+                <li class="parent nav-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="parent nav-item"><a href="#">Movies</a>
+                    <ul class="scroll-link child">
+                        <li class="parent"><a href="#">Hindi<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">Telugu<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">Tamil<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">Malayalam<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">English<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Sci fi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Other</a></li>
+                    </ul>
+                </li>
+                <li class="parent"><a href="#">Genres</a>
+                    <ul class="scroll-link child">
+                        <li><a href="/action">Action</a></li>
+                        <li><a href="/movies">Comedy</a></li>
+                        <li><a href="/kids">Kids</a></li>
+                        <li><a href="/shows">Shows</a></li>
+                        <li><a href="#">Sci fi</a></li>
+                    </ul>
+                </li>
+                <li class="parent nav-item">
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" id="menu">
+                <li class="container-fluid" style="padding-left: 100px">
+                        <form class="d-flex" action="/searchbar" method="get">
+                            <input name="search" id="query" type="search" placeholder="Search Movies"
+                                   aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                </li>
+
+                {% if user.is_authenticated %}
+                    <li class="parent nav-item">
+                        <img class="avatar" src="{{ user.customer.profile_pic.url }}">
+                    </li>
+                    <li class="parent navbar-item mr-2"><a href='#'> Welcome_{{ request.user }}</a>
+                        <ul class="scroll-link child">
+                            <li><a href="/logout"> Profile </a></li>
+                            <li><a href="#"> Payments </a></li>
+                            <li><a href="#"> Downloads </a></li>
+                            <li><a href="#"> Watch Later </a></li>
+                            <li><a href="/logout"> Logout </a></li>
+                        </ul>
+                    </li>
+
+
+                {% else %}
+                    <li class="parent navbar-item" style="padding-left: 10px">
+                        <a href="#small-dialog01" class="popup-with-zoom-anim">
+                            Login</a>
+                    </li>
+
+                    <div id="small-dialog01" class="zoom-anim-dialog mfp-hide">
+                        <form id="form" method="post" action="/login/">
+                            {% csrf_token %}
+                            <h1>Log in</h1>
+                            <div id="inset">
+                                <p>
+                                    <label id="label" for="email">USERNAME</label>
+                                    <input id="input" type="text" name="loginusername">
+                                </p>
+                                <p>
+                                    <label id="label" for="password">PASSWORD</label>
+                                    <input id="input" type="password" name="loginpassword">
+                                </p>
+                            </div>
+                            <p id="p-container">
+                                <a href="#small-dialog02" class="popup-with-zoom-anim play-view1">Not a member yet?</a>
+                                <input id="input" type="submit" name="go" value="Log in">
+                            </p><br>
+                        </form>
+                    </div>
+
+                    <div id="small-dialog02" class="zoom-anim-dialog mfp-hide">
+                        <form id="form" method="post" action="/register/" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <h1>Register</h1>
+                            <div id="inset">
+                                <p>
+                                    <label for="id_first_name">First name:</label>
+                                    <input type="text" name="first_name" maxlength="150" id="id_first_name">
+                                </p>
+
+                                <p>
+                                    <label for="id_last_name">Last name:</label>
+                                    <input type="text" name="last_name" maxlength="150" id="id_last_name">
+                                </p>
+
+                                <p>
+                                    <label for="id_username">Username:</label>
+                                    <input type="text" name="username" maxlength="150" required id="id_username">
+                                    <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+                                </p>
+
+                                <p>
+                                    <label for="id_password">Password:</label>
+                                    <input type="password" name="password" maxlength="128" required id="id_password">
+                                </p>
+
+                                <p>
+                                    <label for="id_email">Email address:</label>
+                                    <input type="email" name="email" maxlength="254" id="id_email">
+                                </p>
+
+                                <p>
+                                    <label for="id_mobile">Mobile:</label>
+                                    <input type="text" name="mobile" maxlength="20" required id="id_mobile">
+                                </p>
+
+                                <p>
+                                    <label for="input label">Profile pic:</label>
+                                    <input type="file" name="profile_pic" class="form-control" id="input label"
+                                           accept="image/*">
+                                </p>
+
+                                <p>
+                                    <label for="id_gender">Gender:</label>
+                                    <select name="gender" class="form-control" id="id_gender">
+                                        <option value="Male" selected>Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <p id="p-container">
+                                <a href="#small-dialog01" class="popup-with-zoom-anim play-view1">Already Had
+                                    Account</a>
+                                <input id="input" type="submit" name="go" value="Log in">
+                            </p><br>
+                        </form>
+                    </div>
+
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

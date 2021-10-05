@@ -1,0 +1,83 @@
+{% include 'homepage/nav.html' %}
+{{ error }}
+
+{% include 'links.html' %}
+
+
+<section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container-fluid py-lg-3">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Search Results Found</h3>
+						</div>
+					</div>
+				</div>
+				<div class="w3l-populohny-grids">
+                {% if post %}
+                    {% for i in post %}
+					<div class="item vhny-grid">
+						<div class="box16">
+							<a href="{% url 'moviedetail' i.id %}">
+								<figure>
+									<img class="img-fluid" src="{{ i.image.url }}" alt="">
+								</figure>
+								<div class="box-content">
+									<h3 class="title">{{ i.name }}</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+										</span>
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+                {% else %}
+                    <div class="box-content">
+                        <h1 class="title">No Results Found</h1>
+                    </div>
+                {% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+<section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container-fluid py-lg-3">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Related Movies</h3>
+						</div>
+					</div>
+				</div>
+				<div class="w3l-populohny-grids">
+                    {% for i in am %}
+					<div class="item vhny-grid">
+						<div class="box16">
+							<a href="{% url 'moviedetail' i.id %}">
+								<figure>
+									<img class="img-fluid" src="{{ i.image.url }}" alt="">
+								</figure>
+								<div class="box-content">
+									<h3 class="title">{{ i.name }}</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+										</span>
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% include 'footer.html' %}

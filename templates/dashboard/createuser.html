@@ -1,0 +1,25 @@
+{% load static %}
+<link href="{% static '../static/dashboard/material-dashboard.css' %}" rel="stylesheet"/>
+<div class="wrapper">
+    <div class="main-panel">
+        {% include 'dashboard/nav.html' %}
+        <div class="container-fluid" style="margin: 70px;margin-left: 0">
+            <form id="form" method="post">
+                {% csrf_token %}
+                <h1>Create User</h1>
+                <div id="inset">
+                    <p>
+                        {{ userform.as_p }}
+                        {{ customerform.as_p }}
+                    </p>
+                </div>
+                <p id="p-container">
+                    <a href="/usersmodify">Back to List</a>
+                    <input id="input" type="submit" name="go" value="Create">
+                </p>
+                <br>
+            </form>
+        </div>
+        {% include 'dashboard/footer.html' %}
+    </div>
+</div>

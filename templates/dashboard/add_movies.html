@@ -1,0 +1,59 @@
+{% load static %}
+<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <!-- CSS Files -->
+    <link href="{% static '../static/dashboard/material-dashboard.css' %}" rel="stylesheet"/>
+<body>
+<div class="wrapper">
+    <div class="main-panel">
+        {% include 'dashboard/nav.html' %}
+        {% include 'links.html' %}
+        {% load static %}
+        <section class="w3l-contact-1">
+            <div class="contacts-9 py-5" style="padding-top: 50px !important;">
+                <div class="container py-lg-4">
+                    <div class="d-grid contact-addres-inf mt-5 pt-lg-4">
+                        <div class="contact-info-left d-grid">
+                            <a href="/add_tm">
+                                <div class="contact-info">
+                                    <div class="icon">
+                                        <span style="margin-top: 15px" class="material-icons">slideshow</span>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Tollywood Movies</h4>
+                                        <p>Add New Movies</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/add_bm">
+                                <div class="contact-info">
+                                    <div class="icon">
+                                        <span style="margin-top: 15px" class="material-icons">slideshow</span>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Bollywood Movies</h4>
+                                        <p>Add New Movies</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/add_hm">
+                                <div class="contact-info">
+                                    <div class="icon">
+                                        <span style="margin-top: 15px" class="material-icons">slideshow</span>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Hollywood Movies</h4>
+                                        <p>Add New Movies</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        {% include 'dashboard/footer.html' %}
+    </div>
+</div>
+</body>

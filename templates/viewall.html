@@ -1,0 +1,79 @@
+{% include 'nav.html' %}
+{% include 'links.html' %}
+
+<div class="container-fluid" style="padding-top: 70px">
+    <section class="w3l-grids">
+        <div class="grids-main py-5">
+            <div class="container-fluid py-lg-3">
+                <div class="headerhny-title">
+                    <div class="w3l-title-grids">
+                        <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 0">Telugu
+                            <span>Movies</span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="w3l-populohny-grids">
+                    {% for i in a %}
+                        <div class="item vhny-grid">
+                            <div class="box16">
+                                <a href="{% url 'moviedetail' i.id %}">
+                                    <figure>
+                                        <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                    </figure>
+                                    <div class="box-content">
+                                        <h3 class="title">{{ i.title }}</h3>
+                                        <h4> <span class="post"><span class="material-icons">schedule</span> 1 Hr 4min
+										</span>
+                                            <span class="post fa fa-heart text-right"></span>
+                                        </h4>
+                                    </div>
+                                    <span class="material-icons video-icon" aria-hidden="true">play_arrow</span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{#<div class="container-fluid" style="padding-top: 70px">#}
+{#    <section class="w3l-grids">#}
+{#        <div class="grids-main py-5">#}
+{#            <div class="container-fluid py-lg-3">#}
+{#                <div class="headerhny-title">#}
+{#                    <div class="w3l-title-grids">#}
+{#                        <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 0">#}
+{#                            <span>Movies</span>#}
+{#                        </h3>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="w3l-populohny-grids">#}
+{#                    {% for i in b %}#}
+{#                        <div class="item vhny-grid">#}
+{#                            <div class="box16">#}
+{#                                <a href="{% url 'moviedetail' i.id %}">#}
+{#                                    <figure>#}
+{#                                        <img class="img-fluid" src="{{ i.image.url }}" alt="">#}
+{#                                    </figure>#}
+{#                                    <div class="box-content">#}
+{#                                        <h3 class="title">{{ i.title }}</h3>#}
+{#                                        <h4> <span class="post"><span class="material-icons">schedule</span> 1 Hr 4min#}
+{#										</span>#}
+{#                                            <span class="post fa fa-heart text-right"></span>#}
+{#                                        </h4>#}
+{#                                    </div>#}
+{#                                    <span class="material-icons video-icon" aria-hidden="true">play_arrow</span>#}
+{#                                </a>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{#</div>#}
+
+{% include 'footer.html' %}

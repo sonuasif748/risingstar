@@ -1,0 +1,48 @@
+{% load static %}
+<link href="{% static '../static/dashboard/material-dashboard.css' %}" rel="stylesheet" />
+<div class="wrapper">
+    <div class="main-panel">
+        {% include 'publisher/nav.html' %}
+        <div class="full">
+            <div class="review-content">
+                <div class="reviews-section">
+                    <h3 class="head">Library</h3>
+                    <div class="col-md-12 reviews-grids">
+                        {% for i in am %}
+                            <div class="review">
+                                <div class="movie-pic">
+                                    <a href="#"><img src="{{ i.image.url }}" alt=""/></a>
+                                </div>
+                                <div class="review-info">
+                                    <a class="span" href="#">{{ i.name }}</a>
+                                    <p class="dirctr">{{ i.slug }}</p>
+
+                                    <div class="yrw">
+
+                                        <a href="{% url 'update' i.id %}" class="btn btn-info d-inline" type="submit">Update Movie</a>
+                                        <a href="{% url 'delete' i.id %}" class="btn btn-danger d-inline" type="submit">Delete The Movie</a>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <p class="info">CAST:&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ i.discription }}</p>
+                                    <p class="info">DIRECTION: &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                    <p class="info">
+                                        GENRE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Sci fi</p>
+                                    <p class="info">DURATION:&nbsp;&nbsp;&nbsp; &nbsp; 1 hour 45 minutes</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'footer.html' %}
+    </div>
+</div>
+
+
+
+

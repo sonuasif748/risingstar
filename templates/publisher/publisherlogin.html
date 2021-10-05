@@ -1,0 +1,26 @@
+{% include 'nav.html' %}
+{% load static %}
+
+<div class="container-fluid" style="margin-top: 70px;margin-left: 0">
+    <form id="form" method="post" action="">
+        {% csrf_token %}
+        <h1>Publisher Login</h1>
+        <div id="inset">
+            <p>
+                <label id="label" for="email">USERNAME</label>
+                <input id="input" type="text" name="publoginusername">
+            </p>
+            <p>
+                <label id="label" for="password">PASSWORD</label>
+                <input id="input" type="password" name="publoginpassword">
+            </p>
+        </div>
+        <p id="p-container">
+            <a href="/publisher-register">Not a member yet?</a>
+            <input id="input" type="submit" name="go" value="Log in">
+        </p><br>
+    </form>
+</div>
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,28 @@
+{% load static %}
+<link href="{% static '../static/dashboard/material-dashboard.css' %}" rel="stylesheet"/>
+<div class="wrapper">
+    <div class="main-panel">
+        {% include 'dashboard/nav.html' %}
+        {% include 'links.html' %}
+        <link rel="stylesheet" href="{% static 'homepage/css/add_movies.css' %}">
+        <div class="container-fluid" style="width: auto;">
+            <form id="form" style="width: 550px" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1 style="color: #fff">Update Movie</h1>
+                <div id="inset">
+                    <div id="label input">
+                        {{ form.as_p }}
+                    </div>
+                </div>
+                <p id="p-container">
+                    <a href="/library">Back to List</a>
+                    <input id="input" type="submit" name="go" value="Update">
+                </p>
+                <br>
+            </form>
+        </div>
+
+        {% include 'dashboard/footer.html' %}
+
+    </div>
+</div>

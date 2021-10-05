@@ -1,0 +1,564 @@
+{% include 'nav.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/material-icon.css' %}"/>
+
+<section class="w3l-main-sliders position-relative" id="home">
+    <div class="companies20-content">
+        <div class="owl-one owl-carousel owl-theme">
+            {% for i in tm %}
+            <div class="item">
+                <li>
+                    <div class="slider-info banner-view bg bg2" style="background: url({{ i.screen_shot }})">
+                        <div class="banner-info">
+                            <h3>{{ i.title }}</h3>
+                            <p>{{ i.discription }}<span class="over-para"></span>
+                            </p>
+                            <a href="#small-dialog1" class="popup-with-zoom-anim play-view1">
+									<span class="video-play-icon">
+										<span class="fa fa-play" aria-hidden="true"></span>
+									</span>
+                                <h6>Watch Now</h6>
+                            </a>
+                            <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                            <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
+                                <iframe src="https://www.youtube.com/embed/GNJ-kT6gFhQ" allow="autoplay; fullscreen"
+                                        allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<br>
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px;size: 50px">Telugu
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'language' 'Telugu' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in tm %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4>
+                                                    <span class="post">
+                                                    <span class="material-icons">schedule</span> {{ i.movie_length }} min
+										            </span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Hindi
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'language' 'Hindi' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in hm %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Tamil
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'language' 'Tamil' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in tem %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Malayalam
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'language' 'Malayalam' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in mm %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">English
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'language' 'English' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in em %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4>
+                                                    <span class="post">
+                                                        <span class="material-icons">schedule</span> {{ i.movie_length }}
+										            </span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Action
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'geners' 'Action' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in a %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Adventure
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'geners' 'Adventure' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in ad %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Comedy
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'geners' 'Comedy' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in c %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+{#<section class="w3l-grids">#}
+{#                <div class="grids-main py-5">#}
+{#                    <div class="container-fluid py-lg-3">#}
+{#                        <div class="headerhny-title">#}
+{#                            <div class="w3l-title-grids">#}
+{#                                <div class="headerhny-left">#}
+{#                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 0">Horror#}
+{#                                        <span>Movies</span>#}
+{#                                    </h3>#}
+{#                                </div>#}
+{#                                <div class="headerhny-right text-lg-right">#}
+{#                                    <h4><a class="show-title" href="{% url 'geners' 'Horror' %}">View all</a></h4>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="owl-three owl-carousel owl-theme">#}
+{#                            {% for i in h %}#}
+{#                                <div class="item vhny-grid">#}
+{#                                    <div class="box16 mb-0">#}
+{#                                        <a href="{% url 'moviedetail' i.id %}">#}
+{#                                            <figure>#}
+{#                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">#}
+{#                                            </figure>#}
+{#                                            <div class="box-content">#}
+{#                                                <h3 class="title">{{ i.title }}</h3>#}
+{#                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min#}
+{#										</span>#}
+{#                                                    <span class="post material-icons text-right">favorite_border</span>#}
+{#                                                </h4>#}
+{#                                            </div>#}
+{#                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{##}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#            </section>#}
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Thirller
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'geners' 'Thirller' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in t %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 30px">Drama
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'geners' 'Drama' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in d %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+<section class="w3l-grids">
+                <div class="grids-main py-5">
+                    <div class="container-fluid py-lg-3">
+                        <div class="headerhny-title">
+                            <div class="w3l-title-grids">
+                                <div class="headerhny-left">
+                                    <h3 class="w3layouts-heading" style="padding-top: 0;margin-bottom: 0">Sci Fi
+                                        <span>Movies</span>
+                                    </h3>
+                                </div>
+                                <div class="headerhny-right text-lg-right">
+                                    <h4><a class="show-title" href="{% url 'geners' 'Sci Fi' %}">View all</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="owl-three owl-carousel owl-theme">
+                            {% for i in s %}
+                                <div class="item vhny-grid">
+                                    <div class="box16 mb-0">
+                                        <a href="{% url 'moviedetail' i.id %}">
+                                            <figure>
+                                                <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                            </figure>
+                                            <div class="box-content">
+                                                <h3 class="title">{{ i.title }}</h3>
+                                                <h4> <span class="post"><span class="material-icons">schedule</span> {{ i.movie_length }} min
+										</span>
+                                                    <span class="post material-icons text-right">favorite_border</span>
+                                                </h4>
+                                            </div>
+                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
+{# Scroll Up#}
+{#<div class="tray-carousel">#}
+{#    <div class="container">#}
+{#        <h2 class="tray-title"><a href="#" class="tray-link" style="color: #ffff" target="">Scroll Up#}
+{#            <i class="right-arrow slide-in-left"></i></a>#}
+{#        </h2>#}
+{#    </div>#}
+{#</div>#}
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,255 @@
+{% load static %}
+{% include 'links.html' %}
+<style>
+    .dropdown-btn {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .dropdown-container {
+        display: none;
+        background-color: transparent;
+        padding-left: 60px;
+    }
+
+    .avatar {
+        vertical-align: middle;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+</style>
+
+<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+    <div class="container" style="margin: 0px">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" id="menu" style="padding-right: 0px">
+                <li>
+                    <a href="/"><img style="width: 40%;" src="{% static 'img/logo.png' %}"></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" id="menu">
+                <li class="parent nav-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="parent nav-item"><a href="#">Movies</a>
+                    <ul class="scroll-link child">
+                        <li class="parent"><a href="#">Hindi<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">Telugu<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">Tamil<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">Malayalam<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Love</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent"><a href="#">English<span class="expand">»</span></a>
+                            <ul class="child">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Drama</a></li>
+                                <li><a href="#">Thriller</a></li>
+                                <li><a href="#">Sci fi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Other</a></li>
+                    </ul>
+                </li>
+                <li class="parent"><a href="#">Genres</a>
+                    <ul class="scroll-link child">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Kids</a></li>
+                        <li><a href="#">Shows</a></li>
+                        <li><a href="#">Sci fi</a></li>
+                    </ul>
+                </li>
+                <li class="parent nav-item">
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" id="menu">
+                <li class="container-fluid">
+                    <form class="d-flex" action="/searchbar" method="get">
+                        <input name="search" id="query" type="search" placeholder="Search Movies" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </li>
+                <li class="parent nav-item">
+                    <img class="avatar" src="{{ user.customer.profile_pic.url }}">
+                </li>
+
+                <li class="parent navbar-item mr-2"><a href='#'> Welcome_{{ request.user }}</a>
+                    <ul class="scroll-link child">
+                        <li><a href="/dashboard"> Dashboard </a></li>
+                        <li><a href="#"> Payments </a></li>
+                        <li><a class="d-inline" href="/logout"> Change_Password </a></li>
+                        <li><a href="/logout"> Logout </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% url 'dashboard' as ds %}
+{% url 'add_tm' as tm %}
+{% url 'add_bm' as bm %}
+{% url 'add_hm' as hm %}
+{% url 'add_movie' as am %}
+{% url 'library' as lb %}
+{% url 'movieslist' as ml %}
+{% url 'usersmodify' as ul %}
+{% url 'createuser' as cu %}
+{% url 'published_movies' as pb %}
+
+<div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+    <div class="logo"><a href="/dashboard" class="simple-text logo-normal">
+        Rising Star
+    </a></div>
+    <div class="sidebar-wrapper" id="navbarNav">
+        <ul class="nav">
+            <li class="nav-item {% if request.path == ds %} active {% endif %}">
+                <a class="nav-link dropdown-btn" href="/dashboard">
+                    <i class="material-icons">dashboard</i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link dropdown-btn" href="#">
+                    <i class="material-icons">playlist_play</i>
+                    <p>Categories</p>
+                </a>
+                <ul class="dropdown-container">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Comedy</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Shows</a></li>
+                    <li><a href="#">Sci fi</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item {% if request.path == tm %} active {% endif %}
+                                {% if request.path == bm %} active {% endif %}
+                                {% if request.path == hm %} active {% endif %}
+                                {% if request.path == am %} active {% endif %}">
+                <a class="nav-link dropdown-btn" href="#">
+                    <i class="material-icons">add_circle_outline</i>
+                    <p>Add Movies</p>
+                </a>
+                <ul class="dropdown-container">
+                    <li><a href="/add_tm">Telugu</a></li>
+                    <li><a href="/add_bm">Hindi</a></li>
+                    <li><a href="/add_hm">English</a></li>
+                    <li><a href="/add_movies">Tamil</a></li>
+                    <li><a href="#">Malayalam</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item {% if request.path == ml %} active {% endif %}
+                                {% if request.path == lb %} active {% endif %}">
+                <a class="nav-link dropdown-btn" href="#">
+                    <i class="material-icons">library_books</i>
+                    <p>Library</p>
+                </a>
+                <ul class="dropdown-container">
+                    <li><a href="/library">Update Movies</a></li>
+                    <li><a href="/movieslist">Movies list</a></li>
+                    <li><a href="#">Create Movie</a></li>
+                    <li><a href="#">Other</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item {% if request.path == ul %} active {% endif %}
+                                {% if request.path == cu %} active {% endif %}">
+                <a class="nav-link dropdown-btn" href="#">
+                    <i class="material-icons">person</i>
+                    <p>Users</p>
+                </a>
+                <ul class="dropdown-container">
+                    <li><a href="/usersmodify">Users List</a></li>
+                    <li><a href="/createuser">Create User</a></li>
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item {% if request.path == pb %} active {% endif %}">
+                <a class="nav-link dropdown-btn" href="/published_movies">
+                    <i class="material-icons">publish</i>
+                    <p>Publisher Movies</p>
+                </a>
+
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link dropdown-btn" href="/contact">
+                    <i class="material-icons">account_box</i>
+                    <p>Support</p>
+                </a>
+            </li>
+        </ul>
+        <script type="text/javascript">
+            const currentLocation = location.href;
+            const menuItem = document.querySelectorAll('a');
+            const menuLength = menuItem.length
+            for (let i = 0; i < menuLength; i++) {
+                if (menuItem[i].href === currentLocation) {
+                    menuItem[i].className = "active"
+                }
+            }
+
+        </script>
+    </div>
+</div>
+
+
+<script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>

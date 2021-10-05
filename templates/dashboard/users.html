@@ -1,0 +1,38 @@
+{% load static %}
+<link href="{% static '../static/dashboard/material-dashboard.css' %}" rel="stylesheet" />
+<div class="wrapper">
+    <div class="main-panel">
+        {% include 'dashboard/nav.html' %}
+        <div class="container" style="padding: 100px">
+            <div class="row col-md-12 custyle">
+                <a href="/createuser" class="btn btn-primary btn-xs pull-right"><b>+</b>Add Customer</a>
+                <table class="table table-striped custab">
+                    <thead>
+                    <tr style="color: #fff">
+                        <th>SNO</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in users %}
+                        <tr style="color: #fff">
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.username }}</td>
+                            <td>{{ i.email }}</td>
+                            <td class="text-center"><a class='btn btn-info btn-xs d-inline' href="{% url 'update_user' i.id %}">
+                                <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                <a href="{% url 'delete_user' i.id %}" class="btn btn-danger btn-xs">
+                                    <span class="glyphicon glyphicon-remove"></span> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+{% include 'dashboard/footer.html' %}
+    </div>
+</div>

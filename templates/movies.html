@@ -1,0 +1,626 @@
+{% include 'nav.html' %}
+    {% include 'links.html' %}
+
+<section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container-fluid py-lg-3" style="margin-top: 70px">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Tollywood Movies</h3>
+						</div>
+						<div class="headerhny-right text-lg-right">
+							<h4><a class="show-title" href="genre.html">Show all</a></h4>
+						</div>
+					</div>
+				</div>
+
+				<div class="owl-three owl-carousel owl-theme">
+                    {% for i in tm %}
+					<div class="item vhny-grid">
+						<div class="box16 mb-0">
+							<a href="#">
+								<figure>
+									<img class="img-fluid" src="{{ i.image.url }}" alt="">
+								</figure>
+								<div class="box-content">
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 2 Hr 4min
+										</span>
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+						<h3> <a class="title-gd" href="#">{{ i.name }}</a></h3>
+						<p>{{ i.slug }}</p>
+						<p>{{ i.discription }}</p>
+						<div class="button-center text-center mt-4">
+							<a href="{% url 'moviedetail' i.id %}" class="btn watch-button">Watch now</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+<section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container-fluid py-lg-3">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Bollywood Movies</h3>
+						</div>
+						<div class="headerhny-right text-lg-right">
+							<h4><a class="show-title" href="genre.html">Show all</a></h4>
+						</div>
+					</div>
+				</div>
+
+				<div class="owl-three owl-carousel owl-theme">
+                    {% for i in bm %}
+					<div class="item vhny-grid">
+						<div class="box16 mb-0">
+							<a href="#">
+								<figure>
+									<img class="img-fluid" src="{{ i.image.url }}" alt="">
+								</figure>
+								<div class="box-content">
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 2 Hr 4min
+										</span>
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+						<h3> <a class="title-gd" href="#">{{ i.name }}</a></h3>
+						<p>{{ i.slug }}</p>
+						<p>{{ i.discription }}</p>
+						<div class="button-center text-center mt-4">
+							<a href="{% url 'moviedetail' i.id %}" class="btn watch-button">Watch now</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+<section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container-fluid py-lg-3">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Hollywood Movies</h3>
+						</div>
+						<div class="headerhny-right text-lg-right">
+							<h4><a class="show-title" href="genre.html">Show all</a></h4>
+						</div>
+					</div>
+				</div>
+
+				<div class="owl-three owl-carousel owl-theme">
+                    {% for i in hm %}
+					<div class="item vhny-grid">
+						<div class="box16 mb-0">
+							<a href="#">
+								<figure>
+									<img class="img-fluid" src="{{ i.image.url }}" alt="">
+								</figure>
+								<div class="box-content">
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 2 Hr 4min
+										</span>
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+						<h3> <a class="title-gd" href="#">{{ i.name }}</a></h3>
+						<p>{{ i.slug }}</p>
+						<p>{{ i.discription }}</p>
+						<div class="button-center text-center mt-4">
+							<a href="{% url 'moviedetail' i.id %}" class="btn watch-button">Watch now</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+{#	<div class="full" style="background-color: deeppink">#}
+{#		<div class="review-content">#}
+{#			<div class="reviews-section">#}
+{#				<h3 class="head">Movie Reviews</h3>#}
+{#				<div class="col-md-9 reviews-grids">#}
+{#					<div class="review">#}
+{#						<div class="movie-pic">#}
+{#							<a href="single.html"><img src="../static/img/r4.jpg" alt="" /></a>#}
+{#						</div>#}
+{#						<div class="review-info">#}
+{#							<a class="span" href="single.html">Interstellar <i>Movies Review</i></a>#}
+{#							<p class="dirctr"><a href="">Christopher Nolan, </a>7 November 2014 (India)</p>#}
+{#							<p class="ratingview">Critic's Rating:</p>#}
+{#							<div class="rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview">#}
+{#								&nbsp;3.5/5#}
+{#							</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<p class="ratingview c-rating">Avg Readers' Rating:</p>#}
+{#							<div class="rating c-rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview c-rating">#}
+{#								&nbsp; 3.3/5</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<div class="yrw">#}
+{#								<div class="dropdown-button">#}
+{#									<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>#}
+{#										<option value="0">Your rating</option>#}
+{#										<option value="1">1.Poor</option>#}
+{#										<option value="2">1.5(Below average)</option>#}
+{#										<option value="3">2.Average</option>#}
+{#										<option value="4">2.5(Above average)</option>#}
+{#										<option value="5">3.Watchable</option>#}
+{#										<option value="6">3.5(Good)</option>#}
+{#										<option value="7">4.5(Very good)</option>#}
+{#										<option value="8">5.Outstanding</option>#}
+{#									</select>#}
+{#								</div>#}
+{#								<div class="rtm text-center">#}
+{#									<a href="#">REVIEW THIS MOVIE</a>#}
+{#								</div>#}
+{#								<div class="wt text-center">#}
+{#									<a href="#">WATCH THIS TRAILER</a>#}
+{#								</div>#}
+{#								<div class="clearfix"></div>#}
+{#							</div>#}
+{#							<p class="info">CAST:&nbsp;#}
+{#								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Will#}
+{#                                Matthew McConaughey, Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn, Michael Caine</p>#}
+{#							<p class="info">DIRECTION: &nbsp;&nbsp;&nbsp;&nbsp;Christopher Nolan</p>#}
+{#							<p class="info">#}
+{#								GENRE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sci fi</p>#}
+{#							<p class="info">DURATION:&nbsp;&nbsp;&nbsp; &nbsp; 1 hour 45 minutes</p>#}
+{#						</div>#}
+{#						<div class="clearfix"></div>#}
+{#					</div>#}
+{#					<div class="review">#}
+{#						<div class="movie-pic">#}
+{#							<a href="single.html"><img src="../static/img/r6.jpg" alt="" /></a>#}
+{#						</div>#}
+{#						<div class="review-info">#}
+{#							<a class="span" href="single.html">Big hero 6 <i>Movie Review</i></a>#}
+{#							<p class="dirctr"><a href="">Reagan Gavin Rasquinha, </a>TNN, Mar 12, 2015, 12.47PM IST</p>#}
+{#							<p class="ratingview">Critic's Rating:</p>#}
+{#							<div class="rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview">#}
+{#								&nbsp;3.5/5#}
+{#							</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<p class="ratingview c-rating">Avg Readers' Rating:</p>#}
+{#							<div class="rating c-rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview c-rating">#}
+{#								&nbsp; 3.3/5</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<div class="yrw">#}
+{#								<div class="dropdown-button">#}
+{#									<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>#}
+{#										<option value="0">Your rating</option>#}
+{#										<option value="1">1.Poor</option>#}
+{#										<option value="2">1.5(Below average)</option>#}
+{#										<option value="3">2.Average</option>#}
+{#										<option value="4">2.5(Above average)</option>#}
+{#										<option value="5">3.Watchable</option>#}
+{#										<option value="6">3.5(Good)</option>#}
+{#										<option value="7">4.5(Very good)</option>#}
+{#										<option value="8">5.Outstanding</option>#}
+{#									</select>#}
+{#								</div>#}
+{#								<div class="rtm text-center">#}
+{#									<a href="#">REVIEW THIS MOVIE</a>#}
+{#								</div>#}
+{#								<div class="wt text-center">#}
+{#									<a href="#">WATCH THIS TRAILER</a>#}
+{#								</div>#}
+{#								<div class="clearfix"></div>#}
+{#							</div>#}
+{#							<p class="info">CAST:&nbsp;#}
+{#								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Will#}
+{#								Smith, Margot Robbie, Adrian Martinez, Rodrigo Santoro, BD Wong, Robert Taylor</p>#}
+{#							<p class="info">DIRECTION: &nbsp;&nbsp;&nbsp;&nbsp;Glenn Ficarra, John Requa</p>#}
+{#							<p class="info">#}
+{#								GENRE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crime</p>#}
+{#							<p class="info">DURATION:&nbsp;&nbsp;&nbsp; &nbsp; 1 hour 45 minutes</p>#}
+{#						</div>#}
+{#						<div class="clearfix"></div>#}
+{#					</div>#}
+{#					<div class="review">#}
+{#						<div class="movie-pic">#}
+{#							<a href="single.html"><img src="../static/img/r5.jpg" alt="" /></a>#}
+{#						</div>#}
+{#						<div class="review-info">#}
+{#							<a class="span" href="single.html">Dawn planet apes <i>Movie Review</i></a>#}
+{#							<p class="dirctr"><a href="">Reagan Gavin Rasquinha, </a>TNN, Mar 12, 2015, 12.47PM IST</p>#}
+{#							<p class="ratingview">Critic's Rating:</p>#}
+{#							<div class="rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview">#}
+{#								&nbsp;3.5/5#}
+{#							</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<p class="ratingview c-rating">Avg Readers' Rating:</p>#}
+{#							<div class="rating c-rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview c-rating">#}
+{#								&nbsp; 3.3/5</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<div class="yrw">#}
+{#								<div class="dropdown-button">#}
+{#									<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>#}
+{#										<option value="0">Your rating</option>#}
+{#										<option value="1">1.Poor</option>#}
+{#										<option value="2">1.5(Below average)</option>#}
+{#										<option value="3">2.Average</option>#}
+{#										<option value="4">2.5(Above average)</option>#}
+{#										<option value="5">3.Watchable</option>#}
+{#										<option value="6">3.5(Good)</option>#}
+{#										<option value="7">4.5(Very good)</option>#}
+{#										<option value="8">5.Outstanding</option>#}
+{#									</select>#}
+{#								</div>#}
+{#								<div class="rtm text-center">#}
+{#									<a href="#">REVIEW THIS MOVIE</a>#}
+{#								</div>#}
+{#								<div class="wt text-center">#}
+{#									<a href="#">WATCH THIS TRAILER</a>#}
+{#								</div>#}
+{#								<div class="clearfix"></div>#}
+{#							</div>#}
+{#							<p class="info">CAST:&nbsp;#}
+{#								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Will#}
+{#								Smith, Margot Robbie, Adrian Martinez, Rodrigo Santoro, BD Wong, Robert Taylor</p>#}
+{#							<p class="info">DIRECTION: &nbsp;&nbsp;&nbsp;&nbsp;Glenn Ficarra, John Requa</p>#}
+{#							<p class="info">#}
+{#								GENRE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crime</p>#}
+{#							<p class="info">DURATION:&nbsp;&nbsp;&nbsp; &nbsp; 1 hour 45 minutes</p>#}
+{#						</div>#}
+{#						<div class="clearfix"></div>#}
+{#					</div>#}
+{#					<div class="review">#}
+{#						<div class="movie-pic">#}
+{#							<a href="single.html"><img src="../static/img/r1.jpg" alt="" /></a>#}
+{#						</div>#}
+{#						<div class="review-info">#}
+{#							<a class="span" href="single.html">The lego <i>Movie Review</i></a>#}
+{#							<p class="dirctr"><a href="">Reagan Gavin Rasquinha, </a>TNN, Mar 12, 2015, 12.47PM IST</p>#}
+{#							<p class="ratingview">Critic's Rating:</p>#}
+{#							<div class="rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview">#}
+{#								&nbsp;3.5/5#}
+{#							</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<p class="ratingview c-rating">Avg Readers' Rating:</p>#}
+{#							<div class="rating c-rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview c-rating">#}
+{#								&nbsp; 3.3/5</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<div class="yrw">#}
+{#								<div class="dropdown-button">#}
+{#									<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>#}
+{#										<option value="0">Your rating</option>#}
+{#										<option value="1">1.Poor</option>#}
+{#										<option value="2">1.5(Below average)</option>#}
+{#										<option value="3">2.Average</option>#}
+{#										<option value="4">2.5(Above average)</option>#}
+{#										<option value="5">3.Watchable</option>#}
+{#										<option value="6">3.5(Good)</option>#}
+{#										<option value="7">4.5(Very good)</option>#}
+{#										<option value="8">5.Outstanding</option>#}
+{#									</select>#}
+{#								</div>#}
+{#								<div class="rtm text-center">#}
+{#									<a href="#">REVIEW THIS MOVIE</a>#}
+{#								</div>#}
+{#								<div class="wt text-center">#}
+{#									<a href="#">WATCH THIS TRAILER</a>#}
+{#								</div>#}
+{#								<div class="clearfix"></div>#}
+{#							</div>#}
+{#							<p class="info">CAST:&nbsp;#}
+{#								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Will#}
+{#								Smith, Margot Robbie, Adrian Martinez, Rodrigo Santoro, BD Wong, Robert Taylor</p>#}
+{#							<p class="info">DIRECTION: &nbsp;&nbsp;&nbsp;&nbsp;Glenn Ficarra, John Requa</p>#}
+{#							<p class="info">#}
+{#								GENRE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crime</p>#}
+{#							<p class="info">DURATION:&nbsp;&nbsp;&nbsp; &nbsp; 1 hour 45 minutes</p>#}
+{#						</div>#}
+{#						<div class="clearfix"></div>#}
+{#					</div>#}
+{#					<div class="review">#}
+{#						<div class="movie-pic">#}
+{#							<a href="single.html"><img src="../static/img/r3.jpg" alt="" /></a>#}
+{#						</div>#}
+{#						<div class="review-info">#}
+{#							<a class="span" href="single.html">Avengers <i>Movie Review</i></a>#}
+{#							<p class="dirctr"><a href="">Reagan Gavin Rasquinha, </a>TNN, Mar 12, 2015, 12.47PM IST</p>#}
+{#							<p class="ratingview">Critic's Rating:</p>#}
+{#							<div class="rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview">#}
+{#								&nbsp;3.5/5#}
+{#							</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<p class="ratingview c-rating">Avg Readers' Rating:</p>#}
+{#							<div class="rating">#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#								<span>☆</span>#}
+{#							</div>#}
+{#							<p class="ratingview">#}
+{#								&nbsp; 3.3/5</p>#}
+{#							<div class="clearfix"></div>#}
+{#							<div class="yrw">#}
+{#								<div class="dropdown-button">#}
+{#									<select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>#}
+{#										<option value="0">Your rating</option>#}
+{#										<option value="1">1.Poor</option>#}
+{#										<option value="2">1.5(Below average)</option>#}
+{#										<option value="3">2.Average</option>#}
+{#										<option value="4">2.5(Above average)</option>#}
+{#										<option value="5">3.Watchable</option>#}
+{#										<option value="6">3.5(Good)</option>#}
+{#										<option value="7">4.5(Very good)</option>#}
+{#										<option value="8">5.Outstanding</option>#}
+{#									</select>#}
+{#								</div>#}
+{#								<div class="rtm text-center">#}
+{#									<a href="#">REVIEW THIS MOVIE</a>#}
+{#								</div>#}
+{#								<div class="wt text-center">#}
+{#									<a href="#">WATCH THIS TRAILER</a>#}
+{#								</div>#}
+{#								<div class="clearfix"></div>#}
+{#							</div>#}
+{#							<p class="info">CAST:&nbsp;#}
+{#								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Will#}
+{#								Smith, Margot Robbie, Adrian Martinez, Rodrigo Santoro, BD Wong, Robert Taylor</p>#}
+{#							<p class="info">DIRECTION: &nbsp;&nbsp;&nbsp;&nbsp;Glenn Ficarra, John Requa</p>#}
+{#							<p class="info">#}
+{#								GENRE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crime</p>#}
+{#							<p class="info">DURATION:&nbsp;&nbsp;&nbsp; &nbsp; 1 hour 45 minutes</p>#}
+{#						</div>#}
+{#						<div class="clearfix"></div>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="col-md-3 side-bar">#}
+{#					<div class="featured">#}
+{#						<h3>Featured Today in Movie Reviews</h3>#}
+{#						<ul>#}
+{#							<li>#}
+{#								<a href="single.html"><img src="../static/img/f1.jpg" alt="" /></a>#}
+{#								<p>more movie review</p>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html"><img src="../static/img/f2.jpg" alt="" /></a>#}
+{#								<p>more movie review</p>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html"><img src="../static/img/f3.jpg" alt="" /></a>#}
+{#								<p>more movie review</p>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html"><img src="../static/img/f4.jpg" alt="" /></a>#}
+{#								<p>more movie review</p>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html"><img src="../static/img/f5.jpg" alt="" /></a>#}
+{#								<p>more movie review</p>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html"><img src="../static/img/f6.jpg" alt="" /></a>#}
+{#								<p>more movie review</p>#}
+{#							</li>#}
+{#							<div class="clearfix"></div>#}
+{#						</ul>#}
+{#					</div>#}
+{##}
+{#					<div class="entertainment">#}
+{#						<h3>Featured Today in Entertainment</h3>#}
+{#						<ul>#}
+{#							<li class="ent">#}
+{#								<a href="single.html"><img src="../static/img/f6.jpg" alt="" /></a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html">Watch ‘Bombay Velvet’ trailer during WC match</a>#}
+{##}
+{#							</li>#}
+{#							<div class="clearfix"></div>#}
+{#						</ul>#}
+{#						<ul>#}
+{#							<li class="ent">#}
+{#								<a href="single.html"><img src="../static/img/f5.jpg" alt="" /></a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html">Watch ‘Bombay Velvet’ trailer during WC match</a>#}
+{##}
+{#							</li>#}
+{#							<div class="clearfix"></div>#}
+{#						</ul>#}
+{#						<ul>#}
+{#							<li class="ent">#}
+{#								<a href="single.html"><img src="../static/img/f3.jpg" alt="" /></a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html">Watch ‘Bombay Velvet’ trailer during WC match</a>#}
+{##}
+{#							</li>#}
+{#							<div class="clearfix"></div>#}
+{#						</ul>#}
+{#						<ul>#}
+{#							<li class="ent">#}
+{#								<a href="single.html"><img src="../static/img/f4.jpg" alt="" /></a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html">Watch ‘Bombay Velvet’ trailer during WC match</a>#}
+{##}
+{#							</li>#}
+{#							<div class="clearfix"></div>#}
+{#						</ul>#}
+{#						<ul>#}
+{#							<li class="ent">#}
+{#								<a href="single.html"><img src="../static/img/f2.jpg" alt="" /></a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html">Watch ‘Bombay Velvet’ trailer during WC match</a>#}
+{##}
+{#							</li>#}
+{#							<div class="clearfix"></div>#}
+{#						</ul>#}
+{#						<ul>#}
+{#							<li class="ent">#}
+{#								<a href="single.html"><img src="../static/img/f1.jpg" alt="" /></a>#}
+{#							</li>#}
+{#							<li>#}
+{#								<a href="single.html">Watch ‘Bombay Velvet’ trailer during WC match</a>#}
+{##}
+{#							</li>#}
+{#							<div class="clearfix"></div>#}
+{#						</ul>#}
+{#					</div>#}
+{#					<div class="might">#}
+{#						<h4>You might also like</h4>#}
+{#						<div class="might-grid">#}
+{#							<div class="grid-might">#}
+{#								<a href="single.html"><img src="../static/img/mi.jpg" class="img-responsiv" alt="">#}
+{#								</a>#}
+{#							</div>#}
+{#							<div class="might-top">#}
+{#								<p>movie is simply dummy text of the printing and typesetting industry.</p>#}
+{#								<a href="single.html">Lorem Ipsum <i> </i></a>#}
+{#							</div>#}
+{#							<div class="clearfix"></div>#}
+{#						</div>#}
+{#						<div class="might-grid">#}
+{#							<div class="grid-might">#}
+{#								<a href="single.html"><img src="../static/img/mi1.jpg" class="img-responsiv" alt="">#}
+{#								</a>#}
+{#							</div>#}
+{#							<div class="might-top">#}
+{#								<p>movie is simply dummy text of the printing and typesetting industry.</p>#}
+{#								<a href="single.html">Lorem Ipsum <i> </i></a>#}
+{#							</div>#}
+{#							<div class="clearfix"></div>#}
+{#						</div>#}
+{#						<div class="might-grid">#}
+{#							<div class="grid-might">#}
+{#								<a href="single.html"><img src="../static/img/mi2.jpg" class="img-responsiv" alt="">#}
+{#								</a>#}
+{#							</div>#}
+{#							<div class="might-top">#}
+{#								<p>movie is simply dummy text of the printing and typesetting industry.</p>#}
+{#								<a href="single.html">Lorem Ipsum <i> </i></a>#}
+{#							</div>#}
+{#							<div class="clearfix"></div>#}
+{#						</div>#}
+{#						<div class="might-grid">#}
+{#							<div class="grid-might">#}
+{#								<a href="single.html"><img src="../static/img/mi3.jpg" class="img-responsiv" alt="">#}
+{#								</a>#}
+{#							</div>#}
+{#							<div class="might-top">#}
+{#								<p>movie is simply dummy text of the printing and typesetting industry.</p>#}
+{#								<a href="single.html">Lorem Ipsum <i> </i></a>#}
+{#							</div>#}
+{#							<div class="clearfix"></div>#}
+{#						</div>#}
+{#					</div>#}
+{#					<!---->#}
+{#					<div class="grid-top">#}
+{#						<h4>Archives</h4>#}
+{#						<ul>#}
+{#							<li><a href="single.html">movie is simply dummy text of the printing and typesetting#}
+{#									industry. </a></li>#}
+{#							<li><a href="single.html">movie has been the industry's standard dummy text ever since#}
+{#									the 1500s</a></li>#}
+{#							<li><a href="single.html">When an unknown printer took a galley of type and scrambled it to#}
+{#									make a type specimen book. </a> </li>#}
+{#							<li><a href="single.html">It has survived not only five centuries, but also the leap into#}
+{#									electronic typesetting</a> </li>#}
+{#							<li><a href="single.html">Remaining essentially unchanged. It was popularised in the 1960s#}
+{#									with the release of </a> </li>#}
+{#							<li><a href="single.html">Letraset sheets containing Lorem Ipsum passages, and more recently#}
+{#									with desktop publishing </a> </li>#}
+{#							<li><a href="single.html">Software like Aldus PageMaker including versionsof Lorem#}
+{#									Ipsum.</a> </li>#}
+{#						</ul>#}
+{#					</div>#}
+{#				</div>#}
+{#				<div class="clearfix"></div>#}
+{#			</div>#}
+{#		</div>#}
+{#	</div>#}
+{% include 'footer.html' %}
