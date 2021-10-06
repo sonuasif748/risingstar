@@ -100,7 +100,7 @@
                            class="w3-bar-item w3-button w3-white w3-xlarge w3-right btn-danger">Delete</a>
                         <a href="{% url 'update' i.id %}"
                            class="w3-bar-item w3-button w3-white w3-xlarge w3-right btn-info">Update</a>
-                        <img src="{{ i.image.url }}" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+                        <img src="{{ i.image }}" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
                         <div class="w3-bar-item">
                             <span class="w3-large">{{ i.name }}</span><br>
                             <span>{{ i.slug }}</span>

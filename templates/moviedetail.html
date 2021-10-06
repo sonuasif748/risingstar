@@ -99,7 +99,7 @@
         <div class="row row-45">
             <div class="col-12 col-md-12 col-lg-6 text-lg-left well1">
                 <div class="row">
-                    <div class="col-sm-6"><img width="90%" src="{{ detail.image.url }}" alt=""></div>
+                    <div class="col-sm-6"><img width="90%" src="{{ detail.image }}" alt=""></div>
                     <div class="col-sm-6 text-left offset-top-30">
                         <div class="review-2">
                             <span class="material-icons">star</span>
@@ -132,7 +132,7 @@
                 <div class="item">
                 <li>
                     <div class="slider-info banner-view banner-top8 bg bg2" style="min-height: 405px;width: 630px;
-                            background: url({{ detail.screen_shot.url }}) no-repeat center">
+                            background: url({{ detail.screen_shot }}) no-repeat center">
                         <div class="banner-info">
                             <h3>{{ detail.title }}</h3>
                             <p>{{ detail.discription }}<span class="over-para"></span>
@@ -174,7 +174,7 @@
                             <div class="box16">
                                 <a href="{% url 'moviedetail' i.id %}">
                                     <figure>
-                                        <img class="img-fluid" src="{{ i.image.url }}" alt="">
+                                        <img class="img-fluid" src="{{ i.image }}" alt="">
                                     </figure>
                                     <div class="box-content">
                                         <h3 class="title">{{ i.title }}</h3>
