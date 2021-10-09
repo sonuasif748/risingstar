@@ -52,11 +52,11 @@ def add_movie(request):
 @login_required(login_url='dashboardlogin')
 def add_tm(request):
     if request.method == 'POST':
-        form = add_tollywood_movie(request.POST, request.FILES)
+        form=pub_add_movie_form(request.POST, request.FILES)
         form.save()
         return redirect('/dashboard')
     else:
-        form = add_tollywood_movie()
+        form = pub_add_movie_form()
     context = {
         'form': form
     }
@@ -65,11 +65,11 @@ def add_tm(request):
 @login_required(login_url='dashboardlogin')
 def add_bm(request):
     if request.method == 'POST':
-        form = add_bollywood_movie(request.POST, request.FILES)
+        form=pub_add_movie_form(request.POST, request.FILES)
         form.save()
         return redirect('/dashboard')
     else:
-        form = add_bollywood_movie()
+        form = pub_add_movie_form()
     context = {
         'form': form
     }
@@ -78,11 +78,11 @@ def add_bm(request):
 @login_required(login_url='dashboardlogin')
 def add_hm(request):
     if request.method == 'POST':
-        form = add_hollywood_movie(request.POST, request.FILES)
+        form=pub_add_movie_form(request.POST, request.FILES)
         form.save()
         return redirect('/dashboard')
     else:
-        form = add_hollywood_movie()
+        form = pub_add_movie_form()
     context = {
         'form': form
     }

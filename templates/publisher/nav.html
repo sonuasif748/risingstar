@@ -108,7 +108,7 @@
                 </li>
 
                 <li class="parent nav-item">
-                    <img class="avatar" src="{{ user.publisher.profile_pic }}">
+                    <img class="avatar" src="{{ user.publisher.profile_pic.url }}">
                 </li>
                 <li class="parent navbar-item mr-2">
                     <a href='#'>Welcome_{{ request.user }}</a>
@@ -170,7 +170,7 @@
                     <li><a href="/pubadd_tm">Telugu</a></li>
                     <li><a href="/pubadd_bm">Hindi</a></li>
                     <li><a href="/pubadd_hm">English</a></li>
-                    <li><a href="/pubadd_movies">Tamil</a></li>
+                    <li><a href="#">Tamil</a></li>
                     <li><a href="#">Malayalam</a></li>
                 </ul>
             </li>
@@ -182,8 +182,8 @@
                     <p>Library</p>
                 </a>
                 <ul class="dropdown-container">
-                    <li><a href="/publisher/library">Update Movies</a></li>
-                    <li><a href="/publisher/movieslist">Movies list</a></li>
+                    <li><a href="/pubmoviestatus">Update Movies</a></li>
+                    <li><a href="/pubmoviestatus">Movies list</a></li>
                     <li><a href="#">Create Movie</a></li>
                     <li><a href="#">Other</a></li>
                 </ul>

@@ -28,4 +28,5 @@ urlpatterns = [
     path('',include('admin_dashboard.urls')),
     path('',include('homepage.urls')),
     path('',include('publisher.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

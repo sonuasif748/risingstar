@@ -73,7 +73,9 @@ input[type=text],
 input[type=password],
 input[type=email],
 input[type=file],
-select[name=gender]{
+select[name=category],
+select[name=language],
+select[name=geners]{
     width: 100%;
     padding: 8px 5px;
     background: linear-gradient(#1f2124, #27292c);
@@ -153,41 +155,48 @@ input[type=text]:hover,
 input[type=password]:hover,
 input[type=email]:hover,
 input[type=file]:hover,
-select[name=gender]:hover,
+select[name=category]:hover,
 label:hover ~ input[type=text],
 label:hover ~ input[type=password],
 label:hover ~ input[type=email],
 label:hover ~ input[type=file],
-label:hover ~ select[name=gender]{
+label:hover ~ select[name=category],
+label:hover ~ select[name=language],
+label:hover ~ select[name=geners]{
     background: #27292c;
 }
+
 input#input\ label,
-select#id_gender {
+select#id_category,
+select#id_language,
+select#id_geners {
     background: #27292c;
 }
+
+
 </style>
-    <link href="{% static '../static/dashboard/material-dashboard.css' %}" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link href="{% static 'dashboard/material-dashboard.css' %}" rel="stylesheet"/>
 <div class="wrapper">
     <div class="main-panel">
         {% include 'dashboard/nav.html' %}
         <div class="container-fluid">
             <form id="form" style="width: 450px" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <h1 style="color: #fff">Add Tollywood Movie</h1>
+                <h1 style="color: #fff">Add Movie</h1>
                 <div id="inset">
                     <p>
                         {{ form.as_p }}
                     </p>
                 </div>
                 <p id="p-container">
-                    <a href="/add_movies">Back to List</a>
+                    <a href="/dashboard">Back to List</a>
                     <input id="input" type="submit" name="go" value="Add Movie">
                 </p>
                 <br>
             </form>
         </div>
-
-        {% include 'dashboard/footer.html' %}
-
+        {% include 'footer.html' %}
     </div>
 </div>

@@ -107,7 +107,7 @@
                     </form>
                 </li>
                 <li class="parent nav-item">
-                    <img class="avatar" src="{{ user.customer.profile_pic }}">
+                    <img class="avatar" src="{{ user.customer.profile_pic.url }}">
                 </li>
 
                 <li class="parent navbar-item mr-2"><a href='#'> Welcome_{{ request.user }}</a>
@@ -185,8 +185,8 @@
                     <p>Library</p>
                 </a>
                 <ul class="dropdown-container">
-                    <li><a href="/library">Update Movies</a></li>
-                    <li><a href="/movieslist">Movies list</a></li>
+                    <li><a href="/published_movies">Update Movies</a></li>
+                    <li><a href="/published_movies">Movies list</a></li>
                     <li><a href="#">Create Movie</a></li>
                     <li><a href="#">Other</a></li>
                 </ul>
