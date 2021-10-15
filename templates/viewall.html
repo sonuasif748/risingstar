@@ -16,7 +16,7 @@
                     {% for i in a %}
                         <div class="item vhny-grid">
                             <div class="box16">
-                                <a href="{% url 'moviedetail' i.id %}">
+                                <a href="{% url 'moviedetail' i.title %}">
                                     <figure>
                                         <img class="img-fluid" src="{{ i.image.url }}" alt="">
                                     </figure>

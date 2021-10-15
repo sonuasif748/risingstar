@@ -36,7 +36,7 @@
 						<p>{{ i.slug }}</p>
 						<p>{{ i.discription }}</p>
 						<div class="button-center text-center mt-4">
-							<a href="{% url 'moviedetail' i.id %}" class="btn watch-button">Watch now</a>
+							<a href="{% url 'moviedetail' i.title %}" class="btn watch-button">Watch now</a>
 						</div>
 					</div>
 					{% endfor %}
@@ -82,7 +82,7 @@
 						<p>{{ i.slug }}</p>
 						<p>{{ i.discription }}</p>
 						<div class="button-center text-center mt-4">
-							<a href="{% url 'moviedetail' i.id %}" class="btn watch-button">Watch now</a>
+							<a href="{% url 'moviedetail' i.title %}" class="btn watch-button">Watch now</a>
 						</div>
 					</div>
 					{% endfor %}
@@ -128,7 +128,7 @@
 						<p>{{ i.slug }}</p>
 						<p>{{ i.discription }}</p>
 						<div class="button-center text-center mt-4">
-							<a href="{% url 'moviedetail' i.id %}" class="btn watch-button">Watch now</a>
+							<a href="{% url 'moviedetail' i.title %}" class="btn watch-button">Watch now</a>
 						</div>
 					</div>
 					{% endfor %}
