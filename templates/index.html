@@ -55,7 +55,7 @@
                             {% for i in tm %}
                                 <div class="item vhny-grid">
                                     <div class="box16 mb-0">
-                                        <a href="{% url 'moviedetail' i.id %}">
+                                        <a href="{% url 'moviedetail' i.title %}">
                                             <figure>
                                                 <img class="img-fluid" src="{{ i.image }}" alt="">
                                             </figure>
@@ -68,7 +68,7 @@
                                                     <span class="post material-icons text-right">favorite_border</span>
                                                 </h4>
                                             </div>
-                                            <a href="{% url 'moviedetail' i.id %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
+                                            <a href="{% url 'moviedetail' i.title %}"><span class="material-icons video-icon" aria-hidden="true">play_arrow</span></a>
                                         </a>
                                     </div>
                                 </div>
